@@ -6,6 +6,7 @@ import { StepTwo } from './StepTwo';
 import { STEPS } from '../constants';
 
 export const WidgetComponent = ({
+  placeholder,
   placeholder_text,
   attributes,
   image,
@@ -44,6 +45,7 @@ export const WidgetComponent = ({
           ? <StepOne
               setActiveStep={setActiveStep}
               setSelectedAttribute={setSelectedAttribute}
+              placeholder={placeholder}
               placeholder_text={placeholder_text}
               attributes={attributes}
               image={image}
@@ -51,6 +53,7 @@ export const WidgetComponent = ({
           : <StepTwo
               setModalOpenStatus={setModalOpenStatus}
               attributes={attributes}
+              placeholder={placeholder}
               selectedAttribute={selectedAttribute}
               select_attribute={select_attribute}
             />

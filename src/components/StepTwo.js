@@ -4,14 +4,19 @@ export const StepTwo = ({
   attributes,
   selectedAttribute,
   setModalOpenStatus,
-  select_attribute,
+  // select_attribute,
   placeholder
 }) => {
+  // select_attribute should be somewhere here
+  // but not totally understand what it should do
   const handleSelectClick = () => {
     const oldColorElement = document.querySelector(`${placeholder} input[checked]`);
 
     oldColorElement.removeAttribute('checked');
-    const newColorElement = document.querySelector(`input[name="color"][data-image="${select_attribute || selectedAttribute}"]`);
+    // const newColorElement = document.querySelector(`input[name="color"][data-image="${select_attribute || selectedAttribute}"]`);
+    const newColorElement = document.querySelector(`
+      input[name="color"][data-image="${selectedAttribute}"]
+    `);
     newColorElement.setAttribute('checked', true);
 
     setModalOpenStatus(false);
@@ -37,7 +42,8 @@ export const StepTwo = ({
           display: 'block',
           marginTop: 20
         }}
-        onClick={select_attribute || handleSelectClick}
+        // onClick={select_attribute || handleSelectClick}
+        onClick={handleSelectClick}
       >
         Select me
       </button>
