@@ -1,14 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export const StepTwo = ({ attributes, selectedAttribute }) => {
+export const StepTwo = ({ attributes, selectedAttribute, setModalOpenStatus }) => {
   const handleSelectClick = () => {
-    console.log('shoud do smth onthe page')
-  };
+    const oldColorElement = document.querySelector('.product-color input[checked]');
+    oldColorElement.removeAttribute('checked');
+
+    const newColorElement = document.querySelector(`input[name="color"][data-image="${selectedAttribute}"]`);
+    newColorElement.setAttribute('checked', true);
+
+    setModalOpenStatus(false);
+  };  
 
   return (
     <>
       {attributes.map((attr) => (
         <input
+          key={attr}
           disabled
           style={{
             height: 50,

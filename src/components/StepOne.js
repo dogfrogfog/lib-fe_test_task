@@ -11,6 +11,7 @@ export const StepOne = ({
   setSelectedAttribute,
   buttonText,
   attributes,
+  image
 }) => {
   const [isLoading, setLoadingStatus] = useState(false);
 
@@ -27,7 +28,7 @@ export const StepOne = ({
 
   return (
     <>
-      <img width='100%' src="https://static.remove.bg/remove-bg-web/eb1bb48845c5007c3ec8d72ce7972fc8b76733b1/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg" />
+      <img width='200' src={image} />
       <button
         disabled={isLoading}
         onClick={handleButtonClick}
@@ -35,7 +36,7 @@ export const StepOne = ({
       >
         {buttonText}
       </button>
-      {isLoading && <img src="https://c.tenor.com/GNoM45eC-t4AAAAM/mr-bean-rowan-atkinson.gif" width='100%' />}
+      {isLoading && <img width='300' src="https://c.tenor.com/GNoM45eC-t4AAAAM/mr-bean-rowan-atkinson.gif" />}
     </>
   );
 };

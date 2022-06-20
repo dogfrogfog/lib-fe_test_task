@@ -1,20 +1,31 @@
 import React, { useState } from 'react';
 
-import { Tab } from './components/Tab';
-import { StepOne } from './components/StepOne';
-import { StepTwo } from './components/StepTwo';
-import { STEPS } from './constants';
+import { Tab } from './Tab';
+import { StepOne } from './StepOne';
+import { StepTwo } from './StepTwo';
+import { STEPS } from '../constants';
 
 export const WidgetComponent = ({
   placeholder_text,
   attributes,
+  image,
+  setModalOpenStatus,
 }) => {
   const [activeStep, setActiveStep] = useState(STEPS.step1);
   const [selectedAttribute, setSelectedAttribute] = useState();
 
   return (
-    <div style={{ height: '100vh', width: '100vw', background: 'rgba(0, 0, 0, 0.5)', position: 'relative' }}>
-      <div style={{ width: 700, margin: '0 auto', position: 'absolute', margin: '100px calc((100vw - 700px) / 2)' }}>
+    <div
+      style={{ 
+        height: '100vh',
+        width: '100vw',
+        background: 'rgba(0, 0, 0, 0.7)',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        zIndex: 9999
+      }}>
+      <div style={{ width: 700, margin: '0 auto' }}>
         <header
           style={{
             width: '100%',
@@ -34,8 +45,10 @@ export const WidgetComponent = ({
               setSelectedAttribute={setSelectedAttribute}
               buttonText={placeholder_text}
               attributes={attributes}
+              image={image}
             />
           : <StepTwo
+              setModalOpenStatus={setModalOpenStatus}
               attributes={attributes}
               selectedAttribute={selectedAttribute}
             />

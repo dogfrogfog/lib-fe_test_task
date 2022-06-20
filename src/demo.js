@@ -1,21 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { WidgetComponent } from './WidgetComponent';
-
-// attributes: ['red', 'blue', 'black'],
-// placeholder: '.product-color',
-// placeholder_text: 'Surprise me with the color',
-// cart_button: '.cart-btn',
-// image: window.location.origin + '/images/black.png',
-// select_attribute: function(attr) {}
+import { App } from './components/App';
 
 function Widget(props) {
   this.start = start;
 
   function start() {
     const root = document.querySelector(props.placeholder);
+    
+    const modal = document.createElement('div');
+    root.append(modal);
 
-    ReactDOM.render(<WidgetComponent />, root);
+    ReactDOM.render(<App {...props} />, modal);
   }
 }
 
