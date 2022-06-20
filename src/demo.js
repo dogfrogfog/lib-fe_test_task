@@ -8,10 +8,10 @@ function Widget(props) {
   function start() {
     const root = document.querySelector(props.placeholder);
     
-    const modal = document.createElement('div');
-    root.append(modal);
+    const modalAndButton = document.createElement('div');
+    root.append(modalAndButton);
 
-    ReactDOM.render(<App {...props} />, modal);
+    ReactDOM.render(<App {...props} />, modalAndButton);
   }
 }
 

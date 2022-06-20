@@ -10,6 +10,7 @@ export const WidgetComponent = ({
   attributes,
   image,
   setModalOpenStatus,
+  select_attribute,
 }) => {
   const [activeStep, setActiveStep] = useState(STEPS.step1);
   const [selectedAttribute, setSelectedAttribute] = useState();
@@ -37,13 +38,13 @@ export const WidgetComponent = ({
           }}
         >
           <Tab name={STEPS.step1} activeStep={activeStep} />
-          <Tab name={STEPS.step2} activeStep={activeStep}>wdwdwdwdw2222</Tab>
+          <Tab name={STEPS.step2} activeStep={activeStep} />
         </header>
         {activeStep === STEPS.step1
           ? <StepOne
               setActiveStep={setActiveStep}
               setSelectedAttribute={setSelectedAttribute}
-              buttonText={placeholder_text}
+              placeholder_text={placeholder_text}
               attributes={attributes}
               image={image}
             />
@@ -51,6 +52,7 @@ export const WidgetComponent = ({
               setModalOpenStatus={setModalOpenStatus}
               attributes={attributes}
               selectedAttribute={selectedAttribute}
+              select_attribute={select_attribute}
             />
         }
       </div>

@@ -1,15 +1,21 @@
 import React from 'react';
 
-export const StepTwo = ({ attributes, selectedAttribute, setModalOpenStatus }) => {
+export const StepTwo = ({ 
+  attributes,
+  selectedAttribute,
+  setModalOpenStatus,
+  select_attribute,
+  placeholder
+}) => {
   const handleSelectClick = () => {
-    const oldColorElement = document.querySelector('.product-color input[checked]');
-    oldColorElement.removeAttribute('checked');
+    const oldColorElement = document.querySelector(`${placeholder} input[checked]`);
 
-    const newColorElement = document.querySelector(`input[name="color"][data-image="${selectedAttribute}"]`);
+    oldColorElement.removeAttribute('checked');
+    const newColorElement = document.querySelector(`input[name="color"][data-image="${select_attribute || selectedAttribute}"]`);
     newColorElement.setAttribute('checked', true);
 
     setModalOpenStatus(false);
-  };  
+  }; 
 
   return (
     <>
@@ -31,7 +37,7 @@ export const StepTwo = ({ attributes, selectedAttribute, setModalOpenStatus }) =
           display: 'block',
           marginTop: 20
         }}
-        onClick={handleSelectClick}
+        onClick={select_attribute || handleSelectClick}
       >
         Select me
       </button>

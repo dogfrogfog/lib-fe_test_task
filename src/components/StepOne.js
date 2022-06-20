@@ -9,7 +9,7 @@ const randomAttributes = (arr) => {
 export const StepOne = ({
   setActiveStep,
   setSelectedAttribute,
-  buttonText,
+  placeholder_text,
   attributes,
   image
 }) => {
@@ -34,9 +34,9 @@ export const StepOne = ({
         onClick={handleButtonClick}
         style={{ margin: '10px 0', display: 'block' }}
       >
-        {buttonText}
+        {placeholder_text}
       </button>
-      {isLoading && <img width='300' src="https://c.tenor.com/GNoM45eC-t4AAAAM/mr-bean-rowan-atkinson.gif" />}
+      {isLoading && <img width='300' src="https://c.tenor.com/GNoM45eC-t4AAAAM/mr-bean-rowan-atkinson.gif"  />}
     </>
   );
 };
