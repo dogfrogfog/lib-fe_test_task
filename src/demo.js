@@ -1,4 +1,4 @@
-import createReactApp from './createReactApp';
+import { createReactApp } from './createReactApp';
 
 function Widget(props) {
   this.start = start;
